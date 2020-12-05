@@ -2,10 +2,10 @@ const express = require("express");
 const app = express();
 let bParser = require("body-parser");
 //let morgan = require("morgan");
-//let cors = require("cors");
+let cors = require("cors");
 app.use(bParser.raw({ type: "*/*" }));
 //app.use(morgan("combined"));
-//app.use(cors());
+app.use(cors());
 
 app.get("/sourcecode", (req, res) => {
   res.send(
